@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title>Heal.io | Dr.</title>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Time', 'Temperature', 'Heart BPM'],
+          ['9:30',  33,      77],
+          ['9:35',  36,      70],
+          ['9:40',  37,       88],
+
+        ]);
+        data.addRow(['9:45', 55, 100]);
+ 
+         var options = {
+          chart: {
+            title: 'Temperature and BPM v/s time',
+            subtitle: 'Temperature in °F'
+          },
+          width: 900,
+          height: 500,
+        };
+        
+
+          
+          var chart = new google.charts.Line(document.getElementById('curve_chart'));
+
+          chart.draw(data, options);
+          
+        });
+         });
+
+      }
+
+
+    </script>
+</head>
+
+  <body>
+<div id="curve_chart" style="width: 900px; height: 500px"></div>
+</div>
+</body>
+</html>
